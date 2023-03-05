@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings', [
+        'heading' => 'Latest Listings',
+        'listings' => \App\Models\Listing::all()
+    ]);
+});
+
+Route::get('listings/{id}', function($id){
+   return view('listing', [
+       'listing' => \App\Models\Listing::find($id)
+   ]);
 });
