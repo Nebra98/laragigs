@@ -17,4 +17,6 @@ Route::get('/', [\App\Http\Controllers\ListingController::class, 'index']);
 
 Route::get('/listings/create', [\App\Http\Controllers\ListingController::class, 'create']);
 
+Route::post('listings', [\App\Http\Controllers\ListingController::class, 'store']);
+
 Route::get('listings/{listing}', [\App\Http\Controllers\ListingController::class, 'show']);
