@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('listings', [
-        'heading' => 'Latest Listings',
-        'listings' => \App\Models\Listing::all()
-    ]);
-});
+Route::get('/', [\App\Http\Controllers\ListingController::class, 'index']);
 
-Route::get('listings/{listing}', function(\App\Models\Listing $listing){
-   return view('listing', [
-       'listing' => $listing
-   ]);
-});
+Route::get('listings/{listing}', [\App\Http\Controllers\ListingController::class, 'show']);
