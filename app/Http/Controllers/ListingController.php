@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ListingController extends Controller
 {
@@ -17,6 +18,11 @@ class ListingController extends Controller
         return view( 'listings.show', [
             'listing' => $listing
         ]);
+    }
+
+    public function create() : View
+    {
+        return view('listings.create');
     }
 
 }
