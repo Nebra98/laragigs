@@ -23,3 +23,4 @@ Route::get('listings/{listing}', [\App\Http\Controllers\ListingController::class
 
 Route::get('/register', [\App\Http\Controllers\UserController::class, 'create']);
 Route::post('/users', [\App\Http\Controllers\UserController::class, 'store']);
+Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout']);
