@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('logo')->nullable();
             $table->string('tags');
@@ -21,6 +22,7 @@ return new class extends Migration {
             $table->string('website');
             $table->longText('description');
             $table->timestamps();
+
         });
     }
 
