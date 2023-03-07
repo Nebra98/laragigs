@@ -14,15 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\ListingController::class, 'index']);
-
 Route::get('/listings/create', [\App\Http\Controllers\ListingController::class, 'create']);
-
 Route::post('listings', [\App\Http\Controllers\ListingController::class, 'store']);
-
 Route::get('/listings/{listing}/edit', [\App\Http\Controllers\ListingController::class, 'edit']);
-
 Route::put('/listings/{listing}', [\App\Http\Controllers\ListingController::class, 'update']);
-
 Route::delete('/listings/{listing}', [\App\Http\Controllers\ListingController::class, 'destroy']);
-
 Route::get('listings/{listing}', [\App\Http\Controllers\ListingController::class, 'show']);
+
+Route::get('/register', [\App\Http\Controllers\UserController::class, 'create']);
+Route::post('/users', [\App\Http\Controllers\UserController::class, 'store']);
